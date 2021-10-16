@@ -7,7 +7,7 @@ This module allows binary communication with telemetry systems
 
 ## Features
 
-- Support for `BCD` data types
+- Support for [`BCD`](https://es.wikipedia.org/wiki/Decimal_codificado_en_binario) data types
 - Implementation of different data types such as `*hexadecimal*`, `*decimal*`, `*byte*`, `*float*`
 - Low power Plot interpreter for `*gsm*` networks
 - Dynamic definition of management frames for binary communication
@@ -22,15 +22,17 @@ This module allows binary communication with telemetry systems
 
 ## Operating principle
 
-The process is defined by a pair of local and remote IP addresses, a transport protocol, and a pair of local and remote port numbers. In order for the server and the PLC to communicate with each other, certain requirements must be met:
+The process is defined by a pair of local and remote IP addresses, a transport protocol, and a pair of local and remote port numbers. In order for the server and the PLC to communicate with each other, 
+certain requirements must be met:
 
-That one program is able to locate the other.
-That both programs are capable of exchanging any sequence of bytes, that is, data relevant to their purpose.
+- That one program is able to locate the other.
+- That both programs are capable of exchanging any sequence of bytes, that is, data relevant to their purpose.
+
 For this, the three resources that originate the socket concept are necessary:
 
-A communications protocol, which allows the exchange of octets.
-A pair of Network Protocol addresses (IP Address, if TCP / IP Protocol is used), which identifies the source and remote computer.
-A pair of port numbers, which identifies a program within each computer.
+- A communications protocol, which allows the exchange of octets.
+- A pair of Network Protocol addresses (IP Address, if TCP / IP Protocol is used), which identifies the source and remote computer.
+- A pair of port numbers, which identifies a program within each computer.
 
 ## Some benefits
 
