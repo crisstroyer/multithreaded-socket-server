@@ -1,5 +1,5 @@
 # multithreaded-server-socket
-[![MIT Licensed][license-image]][LICENSE]
+[![MIT Licensed][license-image]](LICENSE)
 
 Complete, compatible and well tested module to implement a low consumption ([GSM](https://es.wikipedia.org/wiki/Sistema_global_para_las_comunicaciones_m%C3%B3viles)) [multi-threaded](https://totalview.io/blog/multithreading-multithreaded-applications) [TCPIp socket](https://es.wikipedia.org/wiki/Socket_de_Internet) server for binary communication between a server and a [PLC](https://en.wikipedia.org/wiki/Programmable_logic_controller) device in a [SCADA](https://es.wikipedia.org/wiki/SCADA) system.
 
