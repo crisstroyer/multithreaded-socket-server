@@ -25,14 +25,14 @@ namespace SocketServer.Class
         private static State.receive _eventReceive;
         #endregion
 
-        #region Propiedades
+        #region Properties
         public int port { get; set; }
         public IPAddress ipAddress { get; set; }
 
         public StateServer state { get; set; }
         #endregion
 
-        #region Metodos
+        #region Methods
         /// <summary>
         /// Start Server instance
         /// </summary>

@@ -152,113 +152,27 @@ namespace SocketServer.Class
         /// </summary>
         private void initPlotConfig() {
 
-            //Ingresar el Encagezado Generico
-            PlotConfig plotConfig = new PlotConfig("EG");
-            
+            PlotConfig plotConfig = new PlotConfig("GH");
+            //Example 1
             plotConfig.Add(new PlotField(PlotFieldKey.MessageLength, "", PlotFieldType.BCD, 2));
-            plotConfig.Add(new PlotField(PlotFieldKey.PlotVersion, "Versión Trama", PlotFieldType.BCD, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.TypeEncrypted, "Tipo Cifrado", PlotFieldType.BCD, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.Integrity, "Integridad", PlotFieldType.Byte, 3));
+            plotConfig.Add(new PlotField(PlotFieldKey.PlotVersion, "version", PlotFieldType.BCD, 1));
+            plotConfig.Add(new PlotField(PlotFieldKey.TypeEncrypted, "Type", PlotFieldType.BCD, 1));
+            plotConfig.Add(new PlotField(PlotFieldKey.Integrity, "Integri", PlotFieldType.Byte, 3));
 
-            //Encabezado Estandar
-            plotConfig.Add(new PlotField(PlotFieldKey.SerialDevice, "Serial Dispositivo", PlotFieldType.BCD, 4));
-            plotConfig.Add(new PlotField(PlotFieldKey.RFCode, "Código RF", PlotFieldType.BCD, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.SensorCode, "Código Sensor", PlotFieldType.BCD, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.CanalCode, "Canal", PlotFieldType.BCD, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.Command, "Comando", PlotFieldType.ALFANUMERIC, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.ResponseCode, "Código respuesta", PlotFieldType.Byte, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.TimeStamp, "Fecha y Hora", PlotFieldType.BCD, 7));
-            plotConfig.Add(new PlotField(PlotFieldKey.NUT, "NUT", PlotFieldType.BCD, 4));
+            //Example 2
+            plotConfig.Add(new PlotField(PlotFieldKey.SerialDevice, "Serial", PlotFieldType.BCD, 4));
+            plotConfig.Add(new PlotField(PlotFieldKey.RFCode, "RFCode", PlotFieldType.BCD, 1));
+            plotConfig.Add(new PlotField(PlotFieldKey.SensorCode, "SensorCode", PlotFieldType.BCD, 1));
+            plotConfig.Add(new PlotField(PlotFieldKey.Command, "Command", PlotFieldType.ALFANUMERIC, 1));
+            plotConfig.Add(new PlotField(PlotFieldKey.ResponseCode, "ResponseCode", PlotFieldType.Byte, 1));
             State.plotConfigList.Add(plotConfig.key, plotConfig);
 
-            //Trama comando m
-            plotConfig = new PlotConfig("m");
-            plotConfig.Add(new PlotField(PlotFieldKey.Alert, "Alertas", PlotFieldType.Byte, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.Measure, "Medición", PlotFieldType.Float, 4));
+            //Example 3
+            plotConfig = new PlotConfig("s");
+            plotConfig.Add(new PlotField(PlotFieldKey.Alert, "Alert", PlotFieldType.Byte, 1));
+            plotConfig.Add(new PlotField(PlotFieldKey.Measure, "Measure", PlotFieldType.Float, 4));
             State.plotConfigList.Add(plotConfig.key, plotConfig);
-
-            //Trama comando n
-            plotConfig = new PlotConfig("n");
-            plotConfig.Add(new PlotField(PlotFieldKey.ListSlave, "Lista Esclavos", PlotFieldType.Byte, 1));
-            State.plotConfigList.Add(plotConfig.key, plotConfig);
-
-            //Trama comando l
-            plotConfig = new PlotConfig("l");
-            plotConfig.Add(new PlotField(PlotFieldKey.SensorList, "Lista Sensores", PlotFieldType.Byte, 1));
-            State.plotConfigList.Add(plotConfig.key, plotConfig);
-
-            //Trama comando p
-            plotConfig = new PlotConfig("p");
-            plotConfig.Add(new PlotField(PlotFieldKey.DateHour, "Fecha y Hora", PlotFieldType.ALFANUMERIC, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.ListSlave, "Lista Esclavos", PlotFieldType.ALFANUMERIC, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.SensorList, "Lista Sensores", PlotFieldType.ALFANUMERIC, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.configuration, "Configuración", PlotFieldType.ALFANUMERIC, 1));
-            State.plotConfigList.Add(plotConfig.key, plotConfig);
-
-            //Trama comando o
-            plotConfig = new PlotConfig("o");
-            plotConfig.Add(new PlotField(PlotFieldKey.ReleNumber, "Número Relé", PlotFieldType.BCD, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.Operation, "Operación", PlotFieldType.BCD, 1));
-            State.plotConfigList.Add(plotConfig.key, plotConfig);
-
-            //Trama comando v
-            plotConfig = new PlotConfig("v");
-            plotConfig.Add(new PlotField(PlotFieldKey.VersionP1, "Versión P1", PlotFieldType.BCD, 2));
-            plotConfig.Add(new PlotField(PlotFieldKey.VersionP2, "Versión P2", PlotFieldType.BCD, 2));
-            plotConfig.Add(new PlotField(PlotFieldKey.VersionP3, "Versión P3", PlotFieldType.BCD, 2));
-            plotConfig.Add(new PlotField(PlotFieldKey.VersionHw, "Versión Hw", PlotFieldType.BCD, 2));
-            State.plotConfigList.Add(plotConfig.key, plotConfig);
-
-            //Trama de envio comando D            
-            plotConfig = new PlotConfig(PlotCommand.SendDateHour);
-            State.plotConfigList.Add(plotConfig.key, plotConfig);
-
-            //Trama de envio comando C
-            plotConfig = new PlotConfig(PlotCommand.SendConfiguration);
-            plotConfig.Add(new PlotField(PlotFieldKey.PeriodicalReportingTime, "Tiempo Reporte Periodico", PlotFieldType.BCD, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.HighLowWaitTime, "Tiempo Espera Alto o Bajo", PlotFieldType.BCD, 2));
-            plotConfig.Add(new PlotField(PlotFieldKey.HighHighValue, "Valor Alto-Alto", PlotFieldType.Float, 4));
-            plotConfig.Add(new PlotField(PlotFieldKey.HighValue, "Valor Alto", PlotFieldType.Float, 4));
-            plotConfig.Add(new PlotField(PlotFieldKey.LowValue, "Valor Bajo", PlotFieldType.Float, 4));
-            plotConfig.Add(new PlotField(PlotFieldKey.LowLowValue, "Valor Bajo-Bajo", PlotFieldType.Float, 4));
-            State.plotConfigList.Add(plotConfig.key, plotConfig);
-
-            //Trama de envio comando E
-            plotConfig = new PlotConfig(PlotCommand.SendListSlave);
-            plotConfig.Add(new PlotField(PlotFieldKey.ListSlave, "Lista Esclavos", PlotFieldType.Byte, 1));
-            State.plotConfigList.Add(plotConfig.key, plotConfig);
-
-            //Trama de envio comando S
-            plotConfig = new PlotConfig(PlotCommand.SendSensorList);
-            plotConfig.Add(new PlotField(PlotFieldKey.SensorCodeA, "Codigo Sensor A", PlotFieldType.BCD, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.SensorCanalA, "Canal Sensor A", PlotFieldType.BCD, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.SensorTypeA, "Tipo Sensor A", PlotFieldType.Byte, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.SensorCodeB, "Codigo Sensor B", PlotFieldType.BCD, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.SensorCanalB, "Canal Sensor B", PlotFieldType.BCD, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.SensorTypeB, "Tipo Sensor B", PlotFieldType.Byte, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.SensorCodeC, "Codigo Sensor C", PlotFieldType.BCD, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.SensorCanalC, "Canal Sensor C", PlotFieldType.BCD, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.SensorTypeC, "Tipo Sensor C", PlotFieldType.Byte, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.SensorCodeD, "Codigo Sensor D", PlotFieldType.BCD, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.SensorCanalD, "Canal Sensor D", PlotFieldType.BCD, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.SensorTypeD, "Tipo Sensor D", PlotFieldType.Byte, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.SensorCodeE, "Codigo Sensor E", PlotFieldType.BCD, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.SensorCanalE, "Canal Sensor E", PlotFieldType.BCD, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.SensorTypeE, "Tipo Sensor E", PlotFieldType.Byte, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.SensorCodeF, "Codigo Sensor F", PlotFieldType.BCD, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.SensorCanalF, "Canal Sensor F", PlotFieldType.BCD, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.SensorTypeF, "Tipo Sensor F", PlotFieldType.Byte, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.SensorCodeG, "Codigo Sensor G", PlotFieldType.BCD, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.SensorCanalG, "Canal Sensor G", PlotFieldType.BCD, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.SensorTypeG, "Tipo Sensor G", PlotFieldType.Byte, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.SensorCodeH, "Codigo Sensor H", PlotFieldType.BCD, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.SensorCanalH, "Canal Sensor H", PlotFieldType.BCD, 1));
-            plotConfig.Add(new PlotField(PlotFieldKey.SensorTypeH, "Tipo Sensor H", PlotFieldType.Byte, 1));
-            State.plotConfigList.Add(plotConfig.key, plotConfig);
-
-            //Trama de envio comando A    
-            plotConfig = new PlotConfig(PlotCommand.RequestMeasurement);
-            State.plotConfigList.Add(plotConfig.key, plotConfig);
+            
         }
         #endregion
     }
