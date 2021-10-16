@@ -1,5 +1,5 @@
 # multithreaded-server-socket
-[![MIT Licensed][license-image]][license-url]
+[![MIT Licensed][license-image]][LICENSE]
 
 Complete, compatible and well tested module to implement a low consumption ([GSM](https://es.wikipedia.org/wiki/Sistema_global_para_las_comunicaciones_m%C3%B3viles)) [multi-threaded](https://totalview.io/blog/multithreading-multithreaded-applications) [TCPIp socket](https://es.wikipedia.org/wiki/Socket_de_Internet) server for binary communication between a server and a [PLC](https://en.wikipedia.org/wiki/Programmable_logic_controller) device in a [SCADA](https://es.wikipedia.org/wiki/SCADA) system.
 
@@ -8,8 +8,8 @@ This module allows binary communication with telemetry systems
 ## Features
 
 - Support for [`BCD`](https://es.wikipedia.org/wiki/Decimal_codificado_en_binario) data types
-- Implementation of different data types such as `*hexadecimal*`, `*decimal*`, `*byte*`, `*float*`
-- Low power Plot interpreter for `*gsm*` networks
+- Implementation of different data types such as `hexadecimal`, `decimal`, `byte`, `float`
+- Low power Plot interpreter for `gsm` networks
 - Dynamic definition of management frames for binary communication
 - Low-level Socket `TCPIp server`
 - `Multi-threaded` server as a service
@@ -46,6 +46,16 @@ For this, the three resources that originate the socket concept are necessary:
 - *The issue in one thread does not affect other threads*: If any error occurs in any of the threads then no other thread is disturbed, all other processes keep running normally. 
     In a single-threaded server, every other client had to wait if any problem occurs in the thread.
 
+## Contributing
+
+[Contributing Guide](Contributing.md)
+
+## People
+
+The original author is [cristroyer](https://github.com/crisstroyer)
+
+## License
+
+  [MIT](LICENSE)
 
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg
-[license-url]: https://raw.githubusercontent.com/crisstroyer/node-oauth-jwt-server/master/LICENSE
