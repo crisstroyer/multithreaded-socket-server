@@ -16,14 +16,32 @@ This module allows binary communication with telemetry systems
 - Server `multi-port` tcp ip
 - Support for [AES](https://es.wikipedia.org/wiki/Advanced_Encryption_Standard) encryption
 - `C#` implementation
+- High-level identification of PLC master connections
+- SOCK_STREAM support
+- low consumption in cellular data plan (20 bytes for plot)
+
+## Operating principle
+
+The process is defined by a pair of local and remote IP addresses, a transport protocol, and a pair of local and remote port numbers. In order for the server and the PLC to communicate with each other, certain requirements must be met:
+
+That one program is able to locate the other.
+That both programs are capable of exchanging any sequence of bytes, that is, data relevant to their purpose.
+For this, the three resources that originate the socket concept are necessary:
+
+A communications protocol, which allows the exchange of octets.
+A pair of Network Protocol addresses (IP Address, if TCP / IP Protocol is used), which identifies the source and remote computer.
+A pair of port numbers, which identifies a program within each computer.
 
 ## Some benefits
 
-1. *Quick and Efficient*: Multithreaded server could respond efficiently and quickly to the increasing client queries quickly.
-2. *Waiting time for users decreases*: In a single-threaded server, other users had to wait until the running process gets completed but in multithreaded servers, 
-    all users can get a response at a single time so no user has to wait for other processes to finish.
-3. *Threads are independent of each other*: There is no relation between any two threads. When a client is connected a new thread is generated every time.
-4. *The issue in one thread does not affect other threads*: If any error occurs in any of the threads then no other thread is disturbed, all other processes keep running normally. 
+- Connection oriented.
+- All octets are guaranteed to be transmitted without errors or omissions.
+- Every octet is guaranteed to arrive at its destination in the same order in which it was transmitted.
+- *Quick and Efficient*: Multithreaded server could respond efficiently and quickly to the increasing client queries quickly.
+- *Waiting time for users decreases*: In a single-threaded server, other users had to wait until the running process gets completed but in multithreaded servers, 
+- all users can get a response at a single time so no user has to wait for other processes to finish.
+- *Threads are independent of each other*: There is no relation between any two threads. When a client is connected a new thread is generated every time.
+- *The issue in one thread does not affect other threads*: If any error occurs in any of the threads then no other thread is disturbed, all other processes keep running normally. 
     In a single-threaded server, every other client had to wait if any problem occurs in the thread.
 
 
