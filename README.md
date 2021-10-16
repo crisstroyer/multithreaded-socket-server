@@ -1,10 +1,6 @@
 # multithreaded-server-socket
 [![MIT Licensed][license-image]][license-url]
 
-Complete, compliant and well tested module for implementing an OAuth2 server with [JWT(JSON Web Token)](http://self-issued.info/docs/draft-jones-json-web-token.html) token in [Node.js](https://nodejs.org).
-
-The *oauth-jwt-server* module is officially supported wrappers available for popular HTTP server framework [Express](https://npmjs.org/package/express-oauth-server) 
-
 Complete, compatible and well tested module to implement a low consumption ([GSM](https://es.wikipedia.org/wiki/Sistema_global_para_las_comunicaciones_m%C3%B3viles)) [multi-threaded](https://totalview.io/blog/multithreading-multithreaded-applications) [TCPIp socket](https://es.wikipedia.org/wiki/Socket_de_Internet) server for binary communication between a server and a [PLC](https://en.wikipedia.org/wiki/Programmable_logic_controller) device in a [SCADA](https://es.wikipedia.org/wiki/SCADA) system.
 
 This module allows binary communication with telemetry systems
@@ -12,14 +8,14 @@ This module allows binary communication with telemetry systems
 ## Features
 
 - Support for `BCD` data types
-- Implementation of different data types such as *hexadecimal*, *decimal*, *byte*, *float*
-- Low power Plot interpreter for *gsm* networks
+- Implementation of different data types such as `*hexadecimal*`, `*decimal*`, `*byte*`, `*float*`
+- Low power Plot interpreter for `*gsm*` networks
 - Dynamic definition of management frames for binary communication
-- Low-level Socket TCPIp server
-- Multi-threaded server as a service
-- Server multi-port tcp ip
+- Low-level Socket `TCPIp server`
+- `Multi-threaded` server as a service
+- Server `multi-port` tcp ip
 - Support for [AES](https://es.wikipedia.org/wiki/Advanced_Encryption_Standard) encryption
-- C# implementation
+- `C#` implementation
 
 ## Some benefits
 
